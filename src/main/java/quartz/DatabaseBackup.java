@@ -1,5 +1,6 @@
 package quartz;
 
+import general.CommandExec;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
@@ -16,9 +17,9 @@ public class DatabaseBackup implements Job {
     public void execute(JobExecutionContext context) throws JobExecutionException {
         databaseBackup();
     }
-    
-    public static  void databaseBackup() {
+
+    public static void databaseBackup() {
         System.out.println("database backup start");
-        // TO DO
+        CommandExec.backupPostgresDatabase();
     }
 }
